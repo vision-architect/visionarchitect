@@ -27,9 +27,7 @@ class detail_view(generic.DetailView):
         context['labels'] = labels
         imgs = []
         for label in labels:
-            print(label)
             imgs += Image.objects.filter(label=label)
-        print(imgs)
         context['images']=imgs
         return context
 
