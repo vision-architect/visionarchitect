@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'w4#upb*=-w4upxwm_()7kzancnt06tcq_q&^g_8@+i8sgo-b8h'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.environ.get("VA_DEBUG", default=True)
 
 ALLOWED_HOSTS = []
 
@@ -69,20 +69,27 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'visionarchitect.wsgi.application'
-
-
-# Database
-# https://docs.djangoproject.com/en/3.0/ref/settings/#databases
-
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+DATABASES_AVAILABLE = {
+    'prod': {
+        'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'visionarchitect',
         'USER': 'myprojectuser',
         'PASSWORD': 'password',
         'HOST': 'localhost',
-        'PORT': '',
+        'PORT': '5432',
+    },
+    'dev': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
+}
+
+# Database
+# https://docs.djangoproject.com/en/3.0/ref/settings/#databases
+database = os.environ.get('VA_DJANGO_DATABASE', 'dev')
+
+DATABASES = {
+    'default': DATABASES_AVAILABLE[database]
 }
 
 

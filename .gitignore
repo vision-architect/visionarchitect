@@ -63,3 +63,7 @@ target/
 __pycache__/
 local_settings.py
 .env
+
+# Custom
+db.sqlite3
+venv/
