@@ -23,9 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'w4#upb*=-w4upxwm_()7kzancnt06tcq_q&^g_8@+i8sgo-b8h'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.environ.get("VA_DEBUG", default=True)
+DEBUG = int(os.environ.get("VA_DEBUG", default=1))
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_extensions',
 ]
 
 MIDDLEWARE = [

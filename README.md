@@ -18,14 +18,5 @@ VA_DEBUG - False in Production
 VA_DJANGO_DATABASE - Prod in Prod
 
 
-## Postgres setup MacOS
-
-```
-brew install postgresql
-
-# Starting postgres in the background
-pg_ctl -D /usr/local/var/postgres start && brew services start postgresql
-
-# Stopping postgres
-brew services stop postgresql
-```
+## Display Routes/URLs
+./manage.py show_urls
