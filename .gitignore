@@ -67,6 +67,10 @@ local_settings.py
 # Custom
 db.sqlite3
 venv/
+
+# dependencies
+/node_modules
+
 # Elastic Beanstalk Files
 .elasticbeanstalk/*
 !.elasticbeanstalk/*.cfg.yml
