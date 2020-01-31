@@ -25,7 +25,7 @@ SECRET_KEY = 'w4#upb*=-w4upxwm_()7kzancnt06tcq_q&^g_8@+i8sgo-b8h'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = int(os.environ.get("VA_DEBUG", default=1))
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['127.0.0.1', 'vision-prod.gjgm55vgha.us-east-1.elasticbeanstalk.com']
 
 
 # Application definition
@@ -76,12 +76,12 @@ TEMPLATES = [
 WSGI_APPLICATION = 'visionarchitect.wsgi.application'
 DATABASES_AVAILABLE = {
     'prod': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'visionarchitect',
-        'USER': 'myprojectuser',
-        'PASSWORD': 'password',
-        'HOST': 'localhost',
-        'PORT': '5432',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': os.environ.get('RDS_DB_NAME', ''),
+        'USER': os.environ.get('RDS_USERNAME', ''),
+        'PASSWORD': os.environ.get('RDS_PASSWORD', ''),
+        'HOST': os.environ.get('RDS_HOSTNAME', ''),
+        'PORT': os.environ.get('RDS_PORT', ''),
     },
     'dev': {
         'ENGINE': 'django.db.backends.sqlite3',
@@ -142,3 +142,4 @@ CORS_ORIGIN_WHITELIST = (
 
 CSRF_COOKIE_SECURE = True
 SESSION_COOKIE_SECURE = True
+STATIC_ROOT = 'static'
