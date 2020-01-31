@@ -1,8 +1,0 @@
-<h1> Edit Dataset Description: </h1>
-<a>Old Dataset Description: {{old_description}}</a>
-<form action="{% url 'vision:edit_dataset_description_handler' pk  %}" method="post">
-    {% csrf_token %}
-    <a>New Dataset Name:</a><br>
-    <input type="text" name="dataset_description">
-    <input type="submit" value="Submit">
-</form>

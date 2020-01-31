@@ -70,7 +70,7 @@ local_settings.py
 !.elasticbeanstalk/*.global.yml
 
 # Custom
-backend/static/*
+static/*
 db.sqlite3
 venv/
 yarn.lock
