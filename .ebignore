@@ -64,16 +64,6 @@ __pycache__/
 local_settings.py
 .env
 
-# Elastic Beanstalk Files
-.elasticbeanstalk/*
-!.elasticbeanstalk/*.cfg.yml
-!.elasticbeanstalk/*.global.yml
-
 # Custom
-backend/static/*
 db.sqlite3
 venv/
-yarn.lock
-frontend/node_modules
-.vscode/
-*.jpg
