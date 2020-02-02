@@ -1,8 +1,0 @@
-<h1> Edit Label Name: </h1>
-<a>Old Label Name: {{old_label}}</a>
-<form action="{% url 'vision:edit_label_handler' pk label_pk %}" method="post">
-    {% csrf_token %}
-    <a>New Dataset Name:</a><br>
-    <input type="text" name="label_name">
-    <input type="submit" value="Submit">
-</form>

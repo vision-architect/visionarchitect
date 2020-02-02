@@ -1,0 +1,110 @@
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #A9A9A9	;
+}
+.todo-title {
+  cursor: pointer;
+}
+.item-name{
+  font-size: x-large;
+  font-family: Lato;
+  color: black;
+}
+.item-description{
+  font-size: medium;
+  font-style: italic;
+}
+.tab-list > span {
+  padding: 5px 8px;
+  border: 1px solid #282c34;
+  border-radius: 10px;
+  margin-right: 5px;
+  cursor: pointer;
+}
+.tab-list > span.active {
+  background-color: #282c34;
+  color:orange;
+}
+.dropzone {
+  flex: 1;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  width: 500px;
+  height: 150px;
+  border-width: 2px;
+  border-radius: 2px;
+  border-color:grey;
+  border-style: dashed;
+  background-color: #fafafa;
+  color: #bdbdbd;
+  outline: none;
+  transition: border .24s ease-in-out;
+}
+.title{
+  text-align: center;
+  color: rgb(48, 53, 63);
+}
+.button{
+  background-color: grey;
+  color: black;
+  text-align: center;
+  padding: 10px 10px;
+  text-decoration: none;
+  -webkit-transition-duration: 0.4s; 
+  transition-duration: 0.4s;
+}
+.button:hover {
+  background-color: rgb(70, 123, 192);
+  color: white;
+}
+.label-list {
+  width: 45%;
+}
+.label-button{
+  background-color: grey;
+  color: black;
+  text-align: center;
+  padding: 10px 10px;
+  width: 200px;
+  height: 55px;
+  text-decoration: none;
+  -webkit-transition-duration: 0.4s; 
+  transition-duration: 0.4s;
+}
+.label-button:hover {
+  background-color: rgb(70, 123, 192);
+  color: white;
+}
+.left-div {
+  float: left;
+  width: 100px;
+  height: 20px;
+  margin-right: 8px;
+  background-color: linen;
+}
+.right-div {
+  margin-left: 250px;
+  background-color: white;
+}
+.label-img {
+  width: 400px;
+  height: 300px;
+}
+.drop-div{
+  float: left;
+  width: 100px;
+  height: 35px;
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid black;
+}
