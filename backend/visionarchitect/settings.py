@@ -25,7 +25,7 @@ SECRET_KEY = 'w4#upb*=-w4upxwm_()7kzancnt06tcq_q&^g_8@+i8sgo-b8h'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = int(os.environ.get("VA_DEBUG", default=1))
 
-ALLOWED_HOSTS = ['127.0.0.1', 'vision-prod.gjgm55vgha.us-east-1.elasticbeanstalk.com']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -41,7 +41,6 @@ INSTALLED_APPS = [
     'django_extensions',
     'corsheaders',
     'rest_framework',
-    'vision',
 ]
 
 MIDDLEWARE = [
@@ -91,7 +90,7 @@ DATABASES_AVAILABLE = {
 
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
-database = os.environ.get('VA_DJANGO_DATABASE', 'dev')
+database = os.environ.get('VA_DATABASE', 'dev')
 
 DATABASES = {
     'default': DATABASES_AVAILABLE[database]
@@ -143,3 +142,16 @@ CORS_ORIGIN_WHITELIST = (
 CSRF_COOKIE_SECURE = True
 SESSION_COOKIE_SECURE = True
 STATIC_ROOT = 'static'
+
+LOGGING = {
+    "version": 1,
+    "disable_existing_loggers": False,
+    "handlers": {
+        "console": {
+            "class": "logging.StreamHandler",
+        },
+    },
+    "loggers": {
+        "django": {"handlers": ["console"], "level": "INFO"},
+    },
+}

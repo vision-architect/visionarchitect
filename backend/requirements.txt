@@ -9,3 +9,4 @@ sqlparse==0.3.0
 django-cors-headers==3.2.1
 Pillow==7.0.0
 mysqlclient==1.4.6
+djangorestframework==3.11.0

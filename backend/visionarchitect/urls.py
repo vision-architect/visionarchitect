@@ -1,7 +1,7 @@
 from django.contrib import admin
 from django.urls import path, include
 from rest_framework import routers
-from backend import views
+from vision import views
 
 # set up router to backend 
 router = routers.DefaultRouter()
@@ -14,5 +14,5 @@ urlpatterns = [
     path('vision/', include('vision.urls')),
     path('admin/', admin.site.urls),
     path('backend/',include(router.urls)),
-    path('backend1/',include('backend.urls'))
+    path('backend1/',include('vision.urls'))
 ]
